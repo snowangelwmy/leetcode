@@ -1,8 +1,8 @@
 /**
  * Test cases:
- * 1: Given nums = [2, 7, 11, 15], target = 9, return [0, 1].
- * 2: Given nums = [3, 2, 4], target = 6, return [0, 1].
- * 3: Given nums = [3, 3], target = 6, return [0, 1].
+ * 1: Given nums = [2, 7, 11, 15], target = 9, return [0, 1]
+ * 2: Given nums = [3, 2, 4], target = 6, return [0, 1]
+ * 3: Given nums = [3, 3], target = 6, return [0, 1]
  */
 
 import java.util.Map;

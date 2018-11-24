@@ -1,6 +1,6 @@
 /**
  * Test cases:
- * 1: Input: 123, Output: 321.
+ * 1: Input: 123, Output: 321
  * 2: Input: -123, Output: -321
  * 3: Input: 120, Output: 21
  */
