@@ -1,16 +1,9 @@
 /**
  * Test cases:
- * 1: Input: nums = [3,2,2,3], val = 3,, Output: 2
+ * 1: Input: nums = [3,2,2,3], val = 3, Output: 2
  * 2: Input: nums = [0,1,2,2,3,0,4,2], val = 2, Output: 5
  * 3: Input: nums = [1,2,3,4], val = 5, Output: 4
  * 4: Input: nums = [1,1,1,1], val = 1, Output: 0
- *
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
  */
 
 class Solution {

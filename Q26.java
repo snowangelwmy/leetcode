@@ -3,13 +3,6 @@
  * 1: Input: [1,1,2], Output: 2
  * 2: Input: [0,0,1,1,1,2,2,3,3,4], Output: 5
  * 3: Input: [1,2,3,4], Output: 4
- *
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
  */
 
 class Solution {
