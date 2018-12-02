@@ -4,7 +4,7 @@
  * 2: Input: 2, Output: 11
  * 3: Input: 3, Output: 21
  * 4: Input: 4, 0, Output: 1211
- * 4: Input: 5, 0, Output: 111221
+ * 5: Input: 5, 0, Output: 111221
  */
 
 import java.lang.StringBuilder;
