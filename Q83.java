@@ -2,12 +2,7 @@
  * Test cases:
  * 1: Input: 1->1->2, Output: 1->2
  * 2: Input: 1->1->2->3->3, Output: 1->2->3
- */
-
-import java.util.Set;
-import java.util.HashSet;
-
-/**
+ *
  * Definition for singly-linked list.
  * public class ListNode {
  *     int val;
@@ -15,6 +10,10 @@ import java.util.HashSet;
  *     ListNode(int x) { val = x; }
  * }
  */
+
+import java.util.Set;
+import java.util.HashSet;
+
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
         if(head==null){
