@@ -7,7 +7,7 @@ class Solution {
     //The Kadane’s Algorithm for this problem takes O(n) time.
     // Therefore the Kadane’s algorithm is better than the Divide and Conquer approach,
     // but this problem can be considered as a good example to show power of Divide and Conquer.
-    public int maxSubArray(int[] nums) {
+    public int maxSubArray1(int[] nums) {
         int maxSum = Integer.MIN_VALUE;
         if(nums==null||nums.length==0){
             return maxSum;
@@ -27,7 +27,7 @@ class Solution {
     }
 
     //Using Divide and Conquer approach, we can find the maximum subarray sum in O(nLogn) time.
-    public int maxSubArray(int[] nums) {
+    public int maxSubArray2(int[] nums) {
         if(nums==null||nums.length==0){
             return Integer.MIN_VALUE;
         }
