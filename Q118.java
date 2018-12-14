@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * Test cases:
  * 1: Input: 5
  * Output:
