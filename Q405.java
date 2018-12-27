@@ -44,11 +44,10 @@ class Solution {
         num /= 16;
       }
     } else { //num<0
-      int complement = (~Math.abs(num))+1;
       int mask = 15;
       for(int i=0; i<8; i++){
-        builder.insert(0, lookup.get(complement&mask));
-        complement >>= 4;
+        builder.insert(0, lookup.get(num&mask));
+        num >>= 4;
       }
     }
     return builder.toString();
