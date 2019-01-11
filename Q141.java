@@ -27,7 +27,17 @@
 import java.util.Map;
 import java.util.HashMap;
 
-public class Solution {
+public class Q141 {
+
+    class ListNode {
+       int val;
+       ListNode next;
+       ListNode(int x) {
+           val = x;
+           next = null;
+       }
+    }
+
     public boolean hasCycle2(ListNode head) {
         ListNode fastPointer = head;
         ListNode slowPointer = head;

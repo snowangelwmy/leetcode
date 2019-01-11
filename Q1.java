@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
-class Solution {
+class Q1 {
     public int[] twoSum(int[] nums, int target) {
         int[] indices = new int[2];
         indices[0] = -1;

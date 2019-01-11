@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
-class Solution {
+class Q387 {
   public int firstUniqChar(String s) {
     if(s==null||s.length()==0){
       return -1;

@@ -8,7 +8,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-class Solution {
+class Q409 {
   public int longestPalindrome(String s) {
     int length = 0;
     if(s==null||s.length()==0){

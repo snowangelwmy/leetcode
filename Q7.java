@@ -7,7 +7,7 @@
 
 import java.lang.Math;
 
-class Solution {
+class Q7 {
     public int reverse(int x) {
         long reversedX = 0L;
 

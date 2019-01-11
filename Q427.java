@@ -41,7 +41,28 @@ class Node {
     }
 };
 */
-class Solution {
+class Q427 {
+
+  class Node {
+    public boolean val;
+    public boolean isLeaf;
+    public Node topLeft;
+    public Node topRight;
+    public Node bottomLeft;
+    public Node bottomRight;
+
+    public Node() {}
+
+    public Node(boolean _val,boolean _isLeaf,Node _topLeft,Node _topRight,Node _bottomLeft,Node _bottomRight) {
+      val = _val;
+      isLeaf = _isLeaf;
+      topLeft = _topLeft;
+      topRight = _topRight;
+      bottomLeft = _bottomLeft;
+      bottomRight = _bottomRight;
+    }
+  };
+
   public Node construct(int[][] grid) {
     if(grid==null||grid.length==0||grid[0]==null||grid[0].length==0||grid.length!=grid[0].length||(grid.length&(grid.length-1))!=0) {
       return null;

@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Arrays;
 
-class Solution {
+class Q169 {
     public int majorityElement2(int[] nums) {
         if(nums==null||nums.length==0){
             return Integer.MIN_VALUE;

@@ -5,7 +5,7 @@
  * Explanation: There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
  */
 
-class Solution {
+class Q204 {
   public int countPrimes2(int n) {
     int[] isPrime = new int[n];
     //ignore index 0 and 1

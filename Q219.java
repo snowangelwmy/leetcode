@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
-class Solution {
+class Q219 {
   public boolean containsNearbyDuplicate(int[] nums, int k) {
     if(nums==null||nums.length==0){
       return false;

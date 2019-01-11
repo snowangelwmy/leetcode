@@ -4,7 +4,7 @@
  * 2: Input: haystack = "aaaaa", needle = "bba", Output: -1
  */
 
-class Solution {
+class Q28 {
     public int strStr(String haystack, String needle) {
         if(haystack==null||needle==null){
             return -1;

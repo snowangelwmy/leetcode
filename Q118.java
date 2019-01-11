@@ -16,7 +16,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-class Solution {
+class Q118 {
   public List<List<Integer>> generate(int numRows) {
     List<List<Integer>> rows = new ArrayList<>();
     if(numRows<=0){

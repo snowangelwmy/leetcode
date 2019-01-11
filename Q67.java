@@ -6,7 +6,7 @@
 
 import java.lang.StringBuilder;
 
-class Solution {
+class Q67 {
     public String addBinary(String a, String b) {
         if(a==null||a.length()==0){
             return b;

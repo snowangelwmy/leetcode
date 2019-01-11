@@ -18,7 +18,15 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Q404 {
+
+  public class TreeNode {
+      int val;
+       TreeNode left;
+       TreeNode right;
+       TreeNode(int x) { val = x; }
+  }
+
   public int sumOfLeftLeaves(TreeNode root) {
     int sum = 0;
     if(root==null){

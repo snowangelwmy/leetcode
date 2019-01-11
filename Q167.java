@@ -5,7 +5,7 @@
  * Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
  */
 
-class Solution {
+class Q167 {
     public int[] twoSum(int[] numbers, int target) {
         int[] result = new int[] {-1, -1};
         if(numbers==null||numbers.length<2){

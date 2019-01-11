@@ -8,7 +8,7 @@
 
 import java.lang.StringBuilder;
 
-class Solution {
+class Q344 {
   public String reverseString(String s) {
     if(s==null||s.length()==0){
       return s;

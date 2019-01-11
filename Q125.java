@@ -8,7 +8,7 @@
 
 import java.lang.StringBuilder;
 
-class Solution {
+class Q125 {
     public boolean isPalindrome(String s) {
         if(s==null){
             return false;

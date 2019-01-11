@@ -8,7 +8,7 @@
  * Output: 9
  */
 
-class Solution {
+class Q258 {
 
   //without any loop/recursion in O(1) runtime
   public int addDigits(int num) {

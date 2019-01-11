@@ -4,7 +4,7 @@
  * Output: [1,3,12,0,0]
  */
 
-class Solution {
+class Q283 {
   public void moveZeroes(int[] nums) {
     if(nums==null||nums.length==0){
       return;

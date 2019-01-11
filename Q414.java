@@ -16,7 +16,7 @@
  * Both numbers with value 5 are both considered as maximum, and both numbers with value 2 are both considered as third maximum.
  */
 
-class Solution {
+class Q414 {
   public int thirdMax(int[] nums) {
     if(nums==null||nums.length==0){
       return Integer.MIN_VALUE;

@@ -8,7 +8,7 @@
  * Explanation: The input binary string 11111111111111111111111111111101 represents the unsigned integer 4294967293, so return 3221225471 which its binary representation is 10101111110010110010011101101001.
  */
 
-public class Solution {
+public class Q190 {
   // you need treat n as an unsigned value
   public int reverseBits(int n) {
     int result = 0;

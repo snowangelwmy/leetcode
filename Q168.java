@@ -12,7 +12,7 @@
 
 import java.lang.StringBuilder;
 
-class Solution {
+class Q168 {
     public String convertToTitle(int n) {
         if(n<=0){
             return "";

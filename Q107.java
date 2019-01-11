@@ -27,7 +27,15 @@ import java.util.ArrayList;
 import java.util.Queue;
 import java.util.LinkedList;
 
-class Solution {
+class Q107 {
+
+    public class TreeNode {
+       int val;
+       TreeNode left;
+       TreeNode right;
+       TreeNode(int x) { val = x; }
+    }
+
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
         List<List<Integer>> values = new LinkedList<>();
         if(root==null){

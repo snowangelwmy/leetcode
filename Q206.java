@@ -10,7 +10,14 @@
  *     ListNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Q206 {
+
+  public class ListNode {
+      int val;
+       ListNode next;
+       ListNode(int x) { val = x; }
+  }
+
   //reverse recursively
   public ListNode reverseList(ListNode head) {
     if(head==null||head.next==null){

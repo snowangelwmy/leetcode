@@ -11,7 +11,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-class Solution {
+class Q119 {
   public List<Integer> getRow(int rowIndex) {
     if(rowIndex<0){
       return new ArrayList<>();

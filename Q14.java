@@ -4,7 +4,7 @@
  * 2: Input: ["dog","racecar","car"], Output: ""
  */
 
-class Solution {
+class Q14 {
     public String longestCommonPrefix(String[] strs) {
         if(strs==null || strs.length <=0) {
             return "";

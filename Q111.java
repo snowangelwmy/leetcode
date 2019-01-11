@@ -24,7 +24,15 @@
 
 import java.lang.Math;
 
-class Solution {
+class Q111 {
+
+    public class TreeNode {
+       int val;
+       TreeNode left;
+       TreeNode right;
+       TreeNode(int x) { val = x; }
+    }
+
     public int minDepth(TreeNode root) {
         if(root==null){
             return 0;

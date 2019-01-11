@@ -9,7 +9,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-class Solution {
+class Q136 {
 
     public int singleNumber2(int[] nums) {
         if(nums==null||nums.length==0){

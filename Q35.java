@@ -6,7 +6,7 @@
  * 4: Input: [1,3,5,6], 0, Output: 0
  */
 
-class Solution {
+class Q35 {
     public int searchInsert(int[] nums, int target) {
         if(nums==null||nums.length==0){
             return 0;

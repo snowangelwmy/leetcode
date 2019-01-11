@@ -22,7 +22,15 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Q437 {
+
+  public class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int x) { val = x; }
+  }
+
   public int pathSum(TreeNode root, int sum) {
     int count = 0;
     if(root==null){

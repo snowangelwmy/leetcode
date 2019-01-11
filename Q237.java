@@ -17,7 +17,14 @@
  *     ListNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Q237 {
+
+  public class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int x) { val = x; }
+  }
+
   public void deleteNode(ListNode node) {
     if(node==null){
       return;

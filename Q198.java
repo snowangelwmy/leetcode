@@ -16,7 +16,7 @@
 
 import java.lang.Math;
 
-class Solution {
+class Q198 {
   public int rob(int[] nums) {
     if(nums==null||nums.length==0){
       return 0;

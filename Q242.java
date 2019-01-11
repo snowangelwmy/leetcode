@@ -9,7 +9,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-class Solution {
+class Q242 {
   public boolean isAnagram(String s, String t) {
     if(s==null&&t==null){
       return true;

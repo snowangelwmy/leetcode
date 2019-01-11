@@ -12,7 +12,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-class Solution {
+class Q389 {
   public char findTheDifference(String s, String t) {
     Map<Character, Integer> lookup = new HashMap<>();
     for(int i=0; s!=null && i<s.length(); i++){

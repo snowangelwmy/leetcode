@@ -6,7 +6,7 @@
  * Output: 8
  */
 
-class Solution {
+class Q268 {
   public int missingNumber(int[] nums) {
     if(nums==null||nums.length==0){
       return Integer.MIN_VALUE;

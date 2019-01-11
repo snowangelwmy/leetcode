@@ -28,7 +28,15 @@
 
 import java.lang.Math;
 
-class Solution {
+class Q110 {
+
+    public class TreeNode {
+       int val;
+       TreeNode left;
+       TreeNode right;
+       TreeNode(int x) { val = x; }
+    }
+
     public boolean isBalanced(TreeNode root) {
         if(root==null){
             return true;

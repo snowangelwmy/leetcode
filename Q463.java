@@ -8,7 +8,7 @@
  * Output: 16
  */
 
-class Solution {
+class Q463 {
     public int islandPerimeter(int[][] grid) {
         int perimeter = 0;
         if(grid==null||grid.length==0||grid[0]==null||grid[0].length==0){

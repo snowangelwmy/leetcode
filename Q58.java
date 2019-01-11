@@ -5,7 +5,7 @@
  * 3: Input: "b   a    ", Output: 1
  */
 
-class Solution {
+class Q58 {
     public int lengthOfLastWord(String s) {
         if(s==null){
             return 0;

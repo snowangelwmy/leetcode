@@ -5,7 +5,7 @@
  * 3: Input: [1,2,3,4], Output: 4
  */
 
-class Solution {
+class Q26 {
     public int removeDuplicates(int[] nums) {
         if(nums==null||nums.length<=0){
             return 0;

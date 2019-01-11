@@ -10,7 +10,7 @@
  * Output: false
  */
 
-class Solution {
+class Q231 {
   public boolean isPowerOfTwo(int n) {
     return n>0 && bitCount(n)==1;
   }

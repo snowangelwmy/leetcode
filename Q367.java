@@ -6,7 +6,7 @@
  * Output: false
  */
 
-class Solution {
+class Q367 {
   public boolean isPerfectSquare(int num) {
     if(num<0) {
       return false;

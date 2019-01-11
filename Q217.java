@@ -11,7 +11,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-class Solution {
+class Q217 {
   public boolean containsDuplicate(int[] nums) {
     if(nums==null||nums.length==0){
       return false;

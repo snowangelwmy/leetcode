@@ -12,7 +12,7 @@
  * Notice each digit has it's own entry in the array.
  */
 
-class Solution {
+class Q443 {
   public int compress(char[] chars) {
     int length = 0;
     if(chars==null||chars.length==0){

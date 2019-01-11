@@ -38,7 +38,15 @@
 import java.util.List;
 import java.util.ArrayList;
 
-class Solution {
+class Q100 {
+
+    public class TreeNode {
+       int val;
+       TreeNode left;
+       TreeNode right;
+       TreeNode(int x) { val = x; }
+    }
+
     public boolean isSameTree(TreeNode p, TreeNode q) {
         List<Integer> pVals = new ArrayList<>();
         preOrderTraversal(p, pVals);

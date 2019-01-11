@@ -22,7 +22,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-class Solution {
+class Q122 {
 
     public int maxProfit2(int[] prices) {
         if(prices==null||prices.length<=1){

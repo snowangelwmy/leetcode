@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.lang.Math;
 
-class Solution {
+class Q171 {
     private static final Map<Character, Integer> LOOK_UP = initializeLookup();
 
     static Map<Character, Integer> initializeLookup() {

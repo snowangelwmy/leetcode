@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.lang.Math;
 
-class Solution {
+class Q202 {
   public boolean isHappy(int n) {
     Map<Integer,Boolean> lookup = new HashMap<>();
     int sum = calculateSum(n);

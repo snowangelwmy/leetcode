@@ -12,7 +12,7 @@ import java.util.Stack;
 import java.util.List;
 import java.util.Arrays;
 
-class Solution {
+class Q20 {
     private static final List<Character> leftBracketList = Arrays.asList('(', '{', '[');
     private static final List<Character> rightBracketList = Arrays.asList(')', '}', ']');
 

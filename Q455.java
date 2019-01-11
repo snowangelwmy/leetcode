@@ -14,7 +14,7 @@
 
 import java.util.Arrays;
 
-class Solution {
+class Q455 {
     public int findContentChildren(int[] g, int[] s) {
         if(g==null||g.length==0||s==null||s.length==0){
             return 0;

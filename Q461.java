@@ -9,7 +9,7 @@
  * The above arrows point to positions where the corresponding bits are different.
  */
 
-class Solution {
+class Q461 {
     public int hammingDistance(int x, int y) {
         int xor = x^y;
         return bitCount(xor);

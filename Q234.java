@@ -14,7 +14,14 @@
  */
 import java.util.Stack;
 
-class Solution {
+class Q234 {
+
+  public class ListNode {
+       int val;
+       ListNode next;
+       ListNode(int x) { val = x; }
+  }
+
   public boolean isPalindrome(ListNode head) {
     int length = 0;
     ListNode pointer = head;

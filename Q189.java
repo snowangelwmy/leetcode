@@ -13,7 +13,7 @@
  * rotate 2 steps to the right: [3,99,-1,-100]
  */
 
-class Solution {
+class Q189 {
   public void rotate3(int[] nums, int k) {
     if(nums==null||nums.length<=1){
       return;

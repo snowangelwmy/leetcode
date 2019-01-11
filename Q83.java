@@ -14,7 +14,14 @@
 import java.util.Set;
 import java.util.HashSet;
 
-class Solution {
+class Q83 {
+
+    public class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int x) { val = x; }
+    }
+
     public ListNode deleteDuplicates(ListNode head) {
         if(head==null){
             return head;

@@ -26,7 +26,7 @@
  * Then 4617! has 923 + 184 + 36 + 7 + 1 = 1151 trailing zeroes.
  */
 
-class Solution {
+class Q172 {
     public int trailingZeroes(int n) {
         if(n<0){
             return 0;

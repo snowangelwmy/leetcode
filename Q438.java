@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 
-class Solution {
+class Q438 {
   public List<Integer> findAnagrams(String s, String p) {
     List<Integer> indexes = new ArrayList<>();
     if(s==null||p==null||s.length()==0||p.length()==0||s.length()<p.length()){

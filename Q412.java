@@ -24,7 +24,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-class Solution {
+class Q412 {
   public List<String> fizzBuzz(int n) {
     List<String> nums = new ArrayList<>();
     if(n<=0){

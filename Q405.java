@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.lang.Math;
 
-class Solution {
+class Q405 {
   private static final Map<Integer, Character> lookup = initializeMap();
   private static Map<Integer, Character> initializeMap() {
     Map<Integer, Character> lookup = new HashMap<>();

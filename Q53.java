@@ -3,7 +3,7 @@
  * 1: Input: [-2,1,-3,4,-1,2,1,-5,4], Output: 6, Explanation: [4,-1,2,1] has the largest sum = 6
  */
 
-class Solution {
+class Q53 {
     //The Kadane’s Algorithm for this problem takes O(n) time.
     // Therefore the Kadane’s algorithm is better than the Divide and Conquer approach,
     // but this problem can be considered as a good example to show power of Divide and Conquer.

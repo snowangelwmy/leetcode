@@ -7,7 +7,7 @@
  *              removed by your friend.
  */
 
-class Solution {
+class Q292 {
   public boolean canWinNim(int n) {
     if(n<=0){
       System.out.println("Invalid parameter!!!");

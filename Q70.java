@@ -8,7 +8,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-class Solution {
+class Q70 {
     private static Map<Integer, Integer> lookup = new HashMap<>();
 
     public int climbStairs(int n) {

@@ -13,7 +13,7 @@
  * Output: true
  */
 
-class Solution {
+class Q263 {
   public boolean isUgly(int num) {
     if(num<=0){
       return false;

@@ -9,7 +9,7 @@
 import java.util.Set;
 import java.util.HashSet;
 
-class Solution {
+class Q349 {
   public int[] intersection(int[] nums1, int[] nums2) {
     if(nums1==null||nums2==null){
       return null;

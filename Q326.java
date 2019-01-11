@@ -10,7 +10,7 @@
  * Output: false
  */
 
-class Solution {
+class Q326 {
   //Integer Limitations
   public boolean isPowerOfThree(int n) {
     if(n<=0) {

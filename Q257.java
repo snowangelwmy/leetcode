@@ -21,7 +21,15 @@
 import java.util.List;
 import java.util.ArrayList;
 
-class Solution {
+class Q257 {
+
+  public class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int x) { val = x; }
+  }
+
   public List<String> binaryTreePaths(TreeNode root) {
     List<String> paths = new ArrayList<>();
     if(root==null){

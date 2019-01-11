@@ -10,7 +10,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-class Solution {
+class Q447 {
   public int numberOfBoomerangs(int[][] points) {
     int count = 0;
     if(points==null||points.length==0){

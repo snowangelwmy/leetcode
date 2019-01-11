@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 
-class Solution {
+class Q401 {
 
   public List<String> readBinaryWatch2(int num) {
     List<String> times = new ArrayList<>();
@@ -66,7 +66,7 @@ class Solution {
     int[] hour = new int[4];
     int[] minute = {0, 0, 0, 0, 0, 0};
     Set<String> timesSet = new HashSet<>();
-    readBinaryWatchDfs(hour, minute, 0, num, 0, 0, timesSet);
+    readBinaryWatchDfs1_2(hour, minute, 0, num, 0, 0, timesSet);
     times.addAll(timesSet);
     return times;
   }
@@ -74,35 +74,35 @@ class Solution {
   private void readBinaryWatchDfs1_2(int[] hour, int[] minute, int count, int num, int i, int j, Set<String> times) {
     if(i==hour.length&&j==minute.length){
       if(count==num) {
-        addTime(hour, minute, times);
+        addTime1(hour, minute, times);
       }
       return;
     } else if(i==hour.length){
       if(count<num){
         minute[j] = 1;
-        readBinaryWatchDfs(hour, minute, count+1, num, i, j+1, times);
+        readBinaryWatchDfs1_2(hour, minute, count+1, num, i, j+1, times);
       }
       minute[j] = 0;
-      readBinaryWatchDfs(hour, minute, count, num, i, j+1, times);
+      readBinaryWatchDfs1_2(hour, minute, count, num, i, j+1, times);
     } else if(j==minute.length) {
       if(count<num){
         hour[i] = 1;
-        readBinaryWatchDfs(hour, minute, count+1, num, i+1, j, times);
+        readBinaryWatchDfs1_2(hour, minute, count+1, num, i+1, j, times);
       }
       hour[i] = 0;
-      readBinaryWatchDfs(hour, minute, count, num, i+1, j, times);
+      readBinaryWatchDfs1_2(hour, minute, count, num, i+1, j, times);
     } else {//i<hour.length&&j<minute.length
       if(count<num){
         hour[i] = 1;
         minute[j] = 0;
-        readBinaryWatchDfs(hour, minute, count+1, num, i+1, j, times);
+        readBinaryWatchDfs1_2(hour, minute, count+1, num, i+1, j, times);
         hour[i] = 0;
         minute[j] = 1;
-        readBinaryWatchDfs(hour, minute, count+1, num, i, j+1, times);
+        readBinaryWatchDfs1_2(hour, minute, count+1, num, i, j+1, times);
       }
       hour[i] = 0;
       minute[j] = 0;
-      readBinaryWatchDfs(hour, minute, count, num, i+1, j+1, times);
+      readBinaryWatchDfs1_2(hour, minute, count, num, i+1, j+1, times);
     }
   }
 
@@ -110,7 +110,7 @@ class Solution {
   private void readBinaryWatchDfs1_1(int[] hour, int[] minute, int count, int num, int i, int j, Set<String> times) {
     if(i==hour.length&&j==minute.length){
       if(count==num) {
-        addTime(hour, minute, times);
+        addTime1(hour, minute, times);
       }
       return;
     }
@@ -118,18 +118,18 @@ class Solution {
     if(i<hour.length){
       if(count<num){
         hour[i] = 1;
-        readBinaryWatchDfs(hour, minute, count+1, num, i+1, j, times);
+        readBinaryWatchDfs1_1(hour, minute, count+1, num, i+1, j, times);
       }
       hour[i] = 0;
-      readBinaryWatchDfs(hour, minute, count, num, i+1, j, times);
+      readBinaryWatchDfs1_1(hour, minute, count, num, i+1, j, times);
     }
     if(j<minute.length){
       if(count<num){
         minute[j] = 1;
-        readBinaryWatchDfs(hour, minute, count+1, num, i, j+1, times);
+        readBinaryWatchDfs1_1(hour, minute, count+1, num, i, j+1, times);
       }
       minute[j] = 0;
-      readBinaryWatchDfs(hour, minute, count, num, i, j+1, times);
+      readBinaryWatchDfs1_1(hour, minute, count, num, i, j+1, times);
     }
   }
 

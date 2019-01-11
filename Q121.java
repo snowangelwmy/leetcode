@@ -11,7 +11,7 @@
  *
  */
 
-class Solution {
+class Q121 {
   public int maxProfit(int[] prices) {
     if(prices==null||prices.length==0){
       return 0;

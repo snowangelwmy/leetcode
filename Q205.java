@@ -13,7 +13,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-class Solution {
+class Q205 {
   public boolean isIsomorphic(String s, String t) {
     if(s==null&&t==null){
       return true;

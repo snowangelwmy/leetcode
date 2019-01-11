@@ -5,7 +5,7 @@
  * 3: Input: 10, Output: false
  */
 
-class Solution {
+class Q9 {
     public boolean isPalindrome(int x) {
         String xString = Integer.toString(x);
         if(xString==null){

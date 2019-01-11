@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.HashSet;
 import java.lang.StringBuilder;
 
-class Solution {
+class Q345 {
   private static final Set<Character> VOWEL_SET = new HashSet<Character>() {{
     add('a');
     add('e');

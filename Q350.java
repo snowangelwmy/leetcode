@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
-class Solution {
+class Q350 {
   //if the given array is already sorted
   public static int[] intersect2(int[] nums1, int[] nums2) {
     if(nums1==null||nums2==null){

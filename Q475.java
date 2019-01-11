@@ -11,7 +11,7 @@
 import java.util.Arrays;
 import java.lang.Math;
 
-class Solution {
+class Q475 {
   public int findRadius(int[] houses, int[] heaters) {
     Arrays.sort(houses);
     Arrays.sort(heaters);

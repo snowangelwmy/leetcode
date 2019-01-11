@@ -6,7 +6,7 @@
  *  [1,2,3]  =>  [2,3,3]  =>  [3,4,3]  =>  [4,4,4]
  */
 
-class Solution {
+class Q453 {
     public int minMoves(int[] nums) {
         if(nums==null||nums.length==0){
             return 0;

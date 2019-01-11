@@ -22,7 +22,14 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Q235 {
+
+  public class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int x) { val = x; }
+  }
 
   //Iterative Approach
   public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
@@ -60,10 +67,10 @@ class Solution {
     int qValue = q.val;
     if(pValue>rValue&&qValue>rValue){
       //both p and q are at the right subtree
-      return lowestCommonAncestor(root.right, p, q);
+      return lowestCommonAncestor1(root.right, p, q);
     } else if(pValue<rValue&&qValue<rValue){
       //both p and q are at the left subtree
-      return lowestCommonAncestor(root.left, p, q);
+      return lowestCommonAncestor1(root.left, p, q);
     } else {
       return root;
     }

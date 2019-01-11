@@ -38,7 +38,15 @@
 import java.util.Queue;
 import java.util.LinkedList;
 
-class Solution {
+class Q101 {
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
+
     //Recursive approach
     public boolean isSymmetric1(TreeNode root) {
         return isMirror(root, root);

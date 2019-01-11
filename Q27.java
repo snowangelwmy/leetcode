@@ -6,7 +6,7 @@
  * 4: Input: nums = [1,1,1,1], val = 1, Output: 0
  */
 
-class Solution {
+class Q27 {
     public int removeElement(int[] nums, int val) {
         if(nums==null||nums.length<=0){
             return 0;

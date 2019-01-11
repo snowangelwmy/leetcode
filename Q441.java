@@ -17,7 +17,7 @@
  * Because the 4th row is incomplete, we return 3.
  */
 
-class Solution {
+class Q441 {
   public int arrangeCoins(int n) {
     if(n<0){
       return -1;

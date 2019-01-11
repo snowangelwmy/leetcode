@@ -9,7 +9,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-class Solution {
+class Q66 {
     public int[] plusOne(int[] digits) {
         if(digits==null||digits.length==0){
             return digits;

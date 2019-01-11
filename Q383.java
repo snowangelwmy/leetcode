@@ -13,7 +13,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-class Solution {
+class Q383 {
   public boolean canConstruct(String ransomNote, String magazine) {
     if(ransomNote==null){
       return true;

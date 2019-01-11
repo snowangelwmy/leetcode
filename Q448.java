@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.lang.Math;
 
-class Solution {
+class Q448 {
     public List<Integer> findDisappearedNumbers(int[] nums) {
         List<Integer> numbers = new ArrayList<>();
         if(nums==null||nums.length==0){

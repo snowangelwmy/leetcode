@@ -13,7 +13,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-class Solution {
+class Q290 {
   public boolean wordPattern(String pattern, String str) {
     if(pattern==null||str==null||pattern.length()!=str.split(" ").length) {
       return false;

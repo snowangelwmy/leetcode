@@ -10,7 +10,7 @@
 
 import java.lang.Math;
 
-class Solution {
+class Q400 {
   public int findNthDigit(int n) {
     if(n<=0){
       return -1;

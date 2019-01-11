@@ -8,7 +8,7 @@
  * Explanation: The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.
  */
 
-class Solution {
+class Q476 {
   public int findComplement(int num) {
     int result = 0;
     int mask = 1;

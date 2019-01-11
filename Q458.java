@@ -10,7 +10,7 @@
 
 import java.lang.Math;
 
-class Solution {
+class Q458 {
     public int poorPigs(int buckets, int minutesToDie, int minutesToTest) {
         int pigs = 0;
         int maxBuckets = (int)Math.pow(minutesToTest/minutesToDie +1, pigs);

@@ -4,7 +4,7 @@
  * Output: 5
  */
 
-class Solution {
+class Q434 {
   public int countSegments(String s) {
     int count = 0;
     if(s==null||s.length()==0){

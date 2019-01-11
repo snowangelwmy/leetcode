@@ -10,7 +10,7 @@
  * Explanation: It's the substring "abc" four times. (And the substring "abcabc" twice.)
  */
 
-class Solution {
+class Q459 {
     public boolean repeatedSubstringPattern(String s) {
         if(s==null||s.length()==0){
             return false;

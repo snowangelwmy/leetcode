@@ -11,7 +11,7 @@
  * Explanation: The input binary string 11111111111111111111111111111101 has a total of thirty one '1' bits.
  */
 
-public class Solution {
+public class Q191 {
   // you need to treat n as an unsigned value
   public int hammingWeight(int n) {
     int bits = 0;
