@@ -22,6 +22,14 @@ import java.util.List;
 import java.util.ArrayList;
 
 class Q530 {
+
+    public class TreeNode {
+       int val;
+       TreeNode left;
+       TreeNode right;
+       TreeNode(int x) { val = x; }
+    }
+
     public int getMinimumDifference(TreeNode root) {
         List<Integer> values = new ArrayList<>();
         inOrderTraversal(root, values);

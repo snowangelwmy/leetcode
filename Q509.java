@@ -14,7 +14,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-class Solution {
+class Q509 {
 
     private Map<Integer, Integer> lookup = new HashMap<>();
 
