@@ -23,7 +23,7 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Q687 {
     public class Length {
         private int length;
     }
