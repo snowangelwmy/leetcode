@@ -12,13 +12,64 @@
  * 4: Input: S = "a#c", T = "b"
  * Output: false
  * Explanation: S becomes "c" while T becomes "b".
+ * 5: Input: S = "oi###mupo##rszty#s#xu###bxx##dqc#gdjz", T = "oi###mupo##rszty#s#xu####bxx##dqc#gdjz"
+ * Output: false
+ * Explanation: S becomes "c" while T becomes "b".
  */
 
 import java.util.Stack;
 import java.lang.StringBuilder;
 
 class Q844 {
-    public boolean backspaceCompare(String S, String T) {
+
+    //O(min(M,N)) time and O(1) space
+    public boolean backspaceCompare2(String S, String T) {
+        if(S==null&&T==null) {
+            return true;
+        } else if(S==null||T==null) {
+            return false;
+        }
+        int i = S.length()-1, j = T.length()-1;
+        int skipS = 0, skipT = 0;
+        while(i>=0||j>=0){
+            while(i>=0) {
+                if(S.charAt(i)=='#') {
+                    skipS++;
+                    i--;
+                } else if (skipS > 0){
+                    skipS--;
+                    i--;
+                } else {
+                    break;
+                }
+            }
+            while(j>=0) {
+                if(T.charAt(j)=='#') {
+                    skipT++;
+                    j--;
+                } else if (skipT > 0) {
+                    skipT--;
+                    j--;
+                } else {
+                    break;
+                }
+            }
+
+            if(i>=0&&j>=0) {
+                if(S.charAt(i)!=T.charAt(j)) {
+                    return false;
+                }
+                i--;
+                j--;
+            } else if(i>=0||j>=0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    ////OM+N) time and O(M+N) space
+    public boolean backspaceCompare1(String S, String T) {
         if(S==null&&T==null) {
             return true;
         } else if(S==null||T==null) {
