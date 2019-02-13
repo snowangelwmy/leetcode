@@ -24,7 +24,62 @@ import java.util.HashSet;
 class Q684 {
     private final static int MAX_NODE_NUM = 1000;
 
-    public int[] findRedundantConnection(int[][] edges) {
+    //Disjoint Set Union (DSU)
+    public class DSU {
+        private int[] parents;
+        private int[] ranks;
+
+        public DSU(int size) {
+            parents = new int[size];
+            for(int i=0; i<parents.length; i++) {
+                parents[i] = i;
+            }
+            ranks = new int[size];
+        }
+
+        //path compression
+        public int find(int x) {
+            if(parents[x]!=x) {
+                parents[x] = find(parents[x]);
+            }
+            return parents[x];
+        }
+
+        //union-by-rank
+        public boolean union(int x, int y) {
+            int xParent = find(x);
+            int yParent = find(y);
+            if(xParent==yParent) {
+                return false;
+            }
+            if(ranks[xParent] < ranks[yParent]) {
+                parents[xParent] = yParent;
+            } else if(ranks[xParent] > ranks[yParent]) {
+                parents[yParent] = xParent;
+            } else {//ranks[xParent] = ranks[yParent]
+                parents[yParent] = xParent;
+                ranks[xParent]++;
+            }
+            return true;
+        }
+    }
+
+    //Time Complexity: O(N), Space Complexity: O(N)
+    public int[] findRedundantConnection2(int[][] edges) {
+        DSU graph = new DSU(MAX_NODE_NUM+1);
+        for(int i=0; i<edges.length; i++) {
+            int start = edges[i][0];
+            int end = edges[i][1];
+            if(!graph.union(start, end)) {
+                return new int[] {start, end};
+            }
+        }
+
+        return null;
+    }
+
+    //Time Complexity: O(N^2), Space Complexity: O(N)
+    public int[] findRedundantConnection1(int[][] edges) {
         Map<Integer, List<Integer>> graph = new HashMap<>();
         for(int i=1; i<=MAX_NODE_NUM; i++) {
             graph.put(i, new ArrayList<Integer>());
