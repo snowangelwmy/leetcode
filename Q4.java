@@ -21,9 +21,9 @@ class Q4 {
         while(iMin<=iMax) {
             int i = (iMin+iMax)/2;
             int j = halfLen - i;
-            if(i>iMin && nums1[i-1]>nums2[j]) { //i>0 => j<m
+            if(i>0 && nums1[i-1]>nums2[j]) { //i>0 => j<m
                 iMax = i-1; //i is too big
-            } else if(i<iMax && nums2[j-1]>nums1[i]) { //i<m => j>0
+            } else if(i<m && nums2[j-1]>nums1[i]) { //i<m => j>0
                 iMin = i+1; //i is too small
             } else { //i is prefect
                 int maxLeft = 0;
