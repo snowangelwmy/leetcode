@@ -1,3 +1,9 @@
+/**
+ * Test cases:
+ * 1: Input: "23"
+ * Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+ */
+
 import java.util.List;
 import java.util.ArrayList;
 import java.lang.StringBuilder;
