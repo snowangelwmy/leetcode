@@ -28,8 +28,41 @@
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Stack;
 
 class BSTIterator {
+    // next() and hasNext() run in average O(1) time and uses O(h) memory,
+    // where h is the height of the tree.
+
+    Stack<TreeNode> nodes;
+
+    public BSTIterator(TreeNode root) {
+        nodes = new Stack<TreeNode>();
+        TreeNode cur = root;
+        while(cur!=null) {
+            nodes.push(cur);
+            cur = cur.left;
+        }
+    }
+
+    /** @return the next smallest number */
+    public int next() {
+        TreeNode top = nodes.pop();
+        TreeNode cur = top.right;
+        while(cur!=null) {
+            nodes.push(cur);
+            cur = cur.left;
+        }
+        return top.val;
+    }
+
+    /** @return whether we have a next smallest number */
+    public boolean hasNext() {
+        return !nodes.isEmpty();
+    }
+}
+
+class BSTIterator2 {
     // next() and hasNext() run in average O(1) time and uses O(n) memory,
     // where n is the number of nodes in the tree.
     List<Integer> nums;
