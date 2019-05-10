@@ -32,6 +32,13 @@ import java.util.List;
 import java.util.ArrayList;
 
 class Q95 {
+  public class TreeNode {
+       int val;
+      TreeNode left;
+      TreeNode right;
+      TreeNode(int x) { val = x; }
+  }
+
   public List<TreeNode> generateTrees(int n) {
     if(n<=0) {
       return new ArrayList<>();
