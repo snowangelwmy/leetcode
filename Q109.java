@@ -1,4 +1,15 @@
 /**
+ * Test cases:
+ * 1: Input: [-10,-3,0,5,9]
+ * Output: One possible answer is: [0,-3,9,-10,null,5],
+ * which represents the following height balanced BST:
+ *       0
+ *      / \
+ *    -3   9
+ *    /   /
+ *  -10  5
+ *
+ *
  * Definition for singly-linked list.
  * public class ListNode {
  *     int val;
