@@ -8,7 +8,7 @@
  *     0  2  5  7
  *         \     \
  *         3     8
- * Output: You should return this subtree:
+ * Output: You should return this tree:
  *          30
  *        /    \
  *       36    21
