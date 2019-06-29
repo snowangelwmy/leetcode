@@ -33,7 +33,7 @@
  *      1  1 0   1     1  1    1
  *     /
  *    0
- *    
+ *
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
