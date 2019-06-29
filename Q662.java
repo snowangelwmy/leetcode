@@ -95,5 +95,4 @@ class Q662 {
         return maxWidth;
     }
 
-
 }
