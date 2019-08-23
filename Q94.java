@@ -10,6 +10,7 @@
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Stack;
 
 class Q94 {
 
@@ -20,8 +21,28 @@ class Q94 {
     TreeNode(int x) { val = x; }
   }
 
-  // Recursive solution
+  //Iteratively solution
   public List<Integer> inorderTraversal(TreeNode root) {
+    List<Integer> result = new ArrayList<>();
+    if(root==null) {
+      return result;
+    }
+    Stack<TreeNode> stack = new Stack<>();
+    TreeNode cur = root;
+    while(cur!=null || !stack.isEmpty()) {
+      while(cur!=null) {
+        stack.push(cur);
+        cur = cur.left;
+      }
+      cur = stack.pop();
+      result.add(cur.val);
+      cur = cur.right;
+    }
+    return result;
+  }
+
+  // Recursive solution
+  public List<Integer> inorderTraversal0(TreeNode root) {
     List<Integer> result = new ArrayList<>();
     inorderTraversalHelper(root, result);
     return result;
