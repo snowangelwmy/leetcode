@@ -8,7 +8,8 @@
  * 2: Input: [1,2,3,4,5,6]
  * Output: Node 4 from this list (Serialization: [4,5,6])
  * Since the list has two middle nodes with values 3 and 4, we return the second one.
- *
+ * 3: Input: [1]
+ * Output: [1]
  *
  * Definition for singly-linked list.
  * public class ListNode {
