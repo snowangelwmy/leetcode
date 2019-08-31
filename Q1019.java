@@ -18,6 +18,7 @@
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Stack;
 
 class Q1019 {
 
@@ -27,12 +28,37 @@ class Q1019 {
     ListNode(int x) { val = x; }
   }
 
+  // Stack approach
   public int[] nextLargerNodes(ListNode head) {
     if(head==null) {
       return null;
     }
 
-    int index = 0;
+    List<Integer> nums = new ArrayList<>();
+    ListNode pointer = head;
+    while(pointer!=null) {
+      nums.add(pointer.val);
+      pointer = pointer.next;
+    }
+
+    int[] ans = new int[nums.size()];
+    Stack<Integer> indexes = new Stack<>();
+    for(int i=0; i<nums.size(); i++) {
+      while(!indexes.isEmpty() && nums.get(indexes.peek()) < nums.get(i)) {
+        ans[indexes.pop()] = nums.get(i);
+      }
+      indexes.push(i);
+    }
+
+    return ans;
+  }
+
+  // Brute force approach
+  public int[] nextLargerNodes0(ListNode head) {
+    if(head==null) {
+      return null;
+    }
+
     List<Integer> nums = new ArrayList<>();
     ListNode pointer = head;
     while(pointer!=null) {
