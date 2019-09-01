@@ -31,7 +31,38 @@ class Q1171 {
     ListNode(int x) { val = x; }
   }
 
+  // Approach 2: not using Map, and also runs much faster
   public ListNode removeZeroSumSublists(ListNode head) {
+    if(head==null) {
+      return null;
+    }
+
+    ListNode newHead = head;
+    ListNode nextNode = findNextNode(head);
+    if(nextNode == null) {
+      newHead.next = removeZeroSumSublists(head.next);
+    } else {
+      newHead = removeZeroSumSublists(nextNode.next);
+    }
+    return newHead;
+  }
+  private ListNode findNextNode(ListNode head) {
+    ListNode nextNode = null;
+    int sum = 0;
+    ListNode pointer = head;
+    while(pointer!=null) {
+      sum += pointer.val;
+      if(sum==0) {
+        nextNode = pointer;
+        break;
+      }
+      pointer = pointer.next;
+    }
+    return nextNode;
+  }
+
+  // Approach 1: using Map approach
+  public ListNode removeZeroSumSublists0(ListNode head) {
     if(head==null) {
       return null;
     }
