@@ -9,7 +9,11 @@
  *   9  20
  *     /  \
  *    15   7
- *
+ * 2: Input:
+ * preorder = []
+ * inorder = []
+ * Output:
+ *     null
  *
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -19,6 +23,10 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+import java.util.Map;
+import java.util.HashMap;
+
 class Q105 {
 
   public class TreeNode {
@@ -28,7 +36,48 @@ class Q105 {
     TreeNode(int x) { val = x; }
   }
 
+  class PreorderNext {
+    int val;
+
+    PreorderNext(int val) {
+      this.val = val;
+    }
+  }
+
+  // Avoid generating preorder and inorder arrays - memory and runtime friendly
   public TreeNode buildTree(int[] preorder, int[] inorder) {
+    if(preorder==null || inorder==null || preorder.length!=inorder.length || preorder.length==0) {
+      return null;
+    }
+
+    Map<Integer, Integer> inorderLookup = new HashMap<>();
+    for(int i=0; i<inorder.length; i++) {
+      inorderLookup.put(inorder[i], i);
+    }
+
+    return buildTreeHelper(preorder, new PreorderNext(0), inorderLookup, 0, inorder.length-1);
+  }
+
+  private TreeNode buildTreeHelper(int[] preorder, PreorderNext preorderNext, Map<Integer, Integer> inorderLookup, int inorderStart, int inorderEnd) {
+    if(inorderStart>inorderEnd) {
+      return null;
+    }
+    TreeNode root = new TreeNode(preorder[preorderNext.val]);
+    if(inorderStart==inorderEnd) {
+      preorderNext.val++;
+      return root;
+    }
+    //inorderStart<inorderEnd
+    int inorderIndex = inorderLookup.get(preorder[preorderNext.val]);
+    preorderNext.val++;
+    root.left = this.buildTreeHelper(preorder, preorderNext, inorderLookup, inorderStart, inorderIndex-1);
+    root.right = this.buildTreeHelper(preorder, preorderNext, inorderLookup, inorderIndex+1, inorderEnd);
+    return root;
+  }
+
+
+  // Keep generating preorder and inorder arrays - not memory friendly
+  public TreeNode buildTree0(int[] preorder, int[] inorder) {
     if(preorder==null || inorder==null || preorder.length!=inorder.length || preorder.length==0) {
       return null;
     }
