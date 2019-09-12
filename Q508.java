@@ -1,4 +1,22 @@
 /**
+ * Test cases:
+ * 1: Input:
+ *
+ *   5
+ *  /  \
+ * 2   -3
+ *
+ * Output: return [2, -3, 4], since all the values happen only once, return all of them in any order.
+ *
+ * 2: Input:
+ *
+ *   5
+ *  /  \
+ * 2   -5
+ *
+ * Output: return [2], since 2 happens twice, however -5 only occur once.
+ *
+ *
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
