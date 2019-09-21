@@ -27,6 +27,7 @@
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Stack;
 
 class Q783 {
 
@@ -37,7 +38,67 @@ class Q783 {
     TreeNode(int x) { val = x; }
   }
 
+ //Approach 3: not use extra space besides recursion
+ class MinDiff {
+   TreeNode pre;
+   int value;
+
+   MinDiff(int value) {
+     this.value = value;
+   }
+ }
+
   public int minDiffInBST(TreeNode root) {
+    MinDiff minDiff = new MinDiff(Integer.MAX_VALUE);
+    minDiffInBSTHelper(root, minDiff);
+    return minDiff.value;
+  }
+
+  private void minDiffInBSTHelper(TreeNode root, MinDiff minDiff) {
+    if(root==null) {
+      return;
+    }
+
+    if(root.left!=null) {
+      minDiffInBSTHelper(root.left, minDiff);
+    }
+    if(minDiff.pre!=null) {
+      minDiff.value = Math.min(minDiff.value, root.val-minDiff.pre.val);
+    }
+    minDiff.pre = root;
+    if(root.right!=null) {
+      minDiffInBSTHelper(root.right, minDiff);
+    }
+  }
+
+  //Approach 2: save some extra space
+  public int minDiffInBST1(TreeNode root) {
+    if(root==null) {
+      return 0;
+    }
+
+    int minDiff = Integer.MAX_VALUE;
+    TreeNode pre = null;
+    TreeNode cur = root;
+    Stack<TreeNode> nodes = new Stack<>();
+    while(cur!=null||!nodes.isEmpty()) {
+      while(cur!=null) {
+        nodes.push(cur);
+        cur = cur.left;
+      }
+      cur = nodes.pop();
+      if(pre!=null) {
+        minDiff = Math.min(minDiff, cur.val-pre.val);
+      }
+      pre = cur;
+      cur = cur.right;
+    }
+
+    return minDiff;
+  }
+
+  //Approach 1: use a number of extra space
+  public int minDiffInBST0(TreeNode root) {
     if(root==null) {
       return 0;
     }
