@@ -15,6 +15,44 @@ import java.util.HashSet;
 import java.util.Comparator;
 
 class Q378 {
+
+  //https://www.cnblogs.com/grandyang/p/6854825.html
+  //template 2    查找第一个不小于目标值的数
+  public int kthSmallest(int[][] matrix, int k) {
+    if(matrix==null||matrix.length==0||matrix[0]==null||matrix[0].length==0) {
+      return 0;
+    }
+
+    int start = matrix[0][0];
+    int end = matrix[matrix.length-1][matrix[0].length-1];
+    while(start<end) {
+      int mid = (start+end)/2;
+      int count = getSmallerCount(matrix, mid);
+      if(count<k) {
+        start = mid+1;
+      } else {
+        end = mid;
+      }
+    }
+    return end;
+  }
+
+  private int getSmallerCount(int[][] matrix, int mid) {
+    int rowIndex = matrix.length-1;
+    int colIndex = 0;
+    int count = 0;
+    while(rowIndex>=0&&colIndex<matrix[0].length) {
+      if(mid>=matrix[rowIndex][colIndex]) {
+        count += rowIndex+1;
+        colIndex++;
+      } else {
+        rowIndex--;
+      }
+    }
+    return count;
+  }
+
+
   private static final String DELIMITER = ",";
 
   class Node {
@@ -29,7 +67,8 @@ class Q378 {
     }
   }
 
-  public int kthSmallest(int[][] matrix, int k) {
+  //Solution explanation: https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/discuss/358541/Detailed-intution-Priority-queue
+  public int kthSmallest0(int[][] matrix, int k) {
     if(matrix==null||matrix.length==0||matrix[0]==null||matrix[0].length==0) {
       return 0;
     }
