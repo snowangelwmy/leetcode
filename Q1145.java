@@ -30,6 +30,7 @@ class Q1145 {
   }
 
   //https://leetcode.com/problems/binary-tree-coloring-game/discuss/380135/Java.-100-faster.-Easy-to-understand
+  //https://leetcode.com/problems/binary-tree-coloring-game/discuss/448494/Java-(100-100)
   public boolean btreeGameWinningMove(TreeNode root, int n, int x) {
     if(root==null) return false;
 
