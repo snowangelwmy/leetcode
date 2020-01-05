@@ -44,14 +44,7 @@ class Q127 {
         Map<String, List<String>> lookup = new HashMap<>();
         for(String word : wordList) {
             for(int i=0; i<word.length(); i++) {
-                String key;
-                if(i==0) {
-                    key = '*' + word.substring(i+1, word.length());
-                } else if(i==word.length()-1) {
-                    key = word.substring(0, i) + '*';
-                } else {
-                    key = word.substring(0, i) + '*' + word.substring(i+1, word.length());
-                }
+                String key = word.substring(0, i) + '*' + word.substring(i+1, word.length());
                 lookup.computeIfAbsent(key, k -> new ArrayList<String>());
                 lookup.get(key).add(word);
             }
@@ -69,14 +62,7 @@ class Q127 {
             }
 
             for(int i=0; i<current.word.length(); i++) {
-                String key;
-                if(i==0) {
-                    key = '*' + current.word.substring(i+1, current.word.length());
-                } else if(i==current.word.length()-1) {
-                    key = current.word.substring(0, i) + '*';
-                } else {
-                    key = current.word.substring(0, i) + '*' + current.word.substring(i+1, current.word.length());
-                }
+                String key = current.word.substring(0, i) + '*' + current.word.substring(i+1, current.word.length());
                 List<String> neighbors = lookup.getOrDefault(key, new ArrayList<String>());
                 for(String neighbor : neighbors) {
                     if(!visited.contains(neighbor)) {
