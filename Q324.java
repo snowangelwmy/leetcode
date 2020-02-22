@@ -11,6 +11,7 @@
 import java.util.Arrays;
 
 class Q324 {
+    //https://leetcode.com/problems/wiggle-sort-ii/discuss/332357/Java-Solution
     public void wiggleSort(int[] nums) {
         if(nums==null||nums.length<2) {
             return;
