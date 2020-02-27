@@ -1,8 +1,17 @@
+/**
+ * Test cases:
+ * 1: Input: s1 = "ab" s2 = "eidbaooo"
+ * Output: True
+ * Explanation: s2 contains one permutation of s1 ("ba").
+ * 2: Input:s1= "ab" s2 = "eidboaoo"
+ * Output: False
+ */
+
 import java.util.Set;
 import java.util.HashSet;
 import java.lang.StringBuffer;
 
-class Q576 {
+class Q567 {
 
   private static final int NUM = 26;
 
