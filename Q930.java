@@ -14,9 +14,39 @@
  * Output: 3
  */
 
+import java.util.Map;
+import java.util.HashMap;
+
 class Q930 {
+
     //https://leetcode.com/problems/binary-subarrays-with-sum/solution/
     public int numSubarraysWithSum(int[] A, int S) {
+        if(A==null||A.length==0) {
+            return 0;
+        }
+
+        int[] prefixSums = new int[A.length+1];
+        for(int i=0; i<A.length; i++) {
+            prefixSums[i+1] = prefixSums[i] + A[i];
+        }
+
+        int count = 0;
+        //For each (key, value) pair in the map, it represendts
+        //the number of prefixSums (value) with its sum equals to the key
+        Map<Integer, Integer> lookup = new HashMap<>();
+        for(int i=0; i<A.length; i++) {
+            if(prefixSums[i+1]==S) {
+                count++;
+            }
+            if(lookup.containsKey(prefixSums[i+1]-S)) {
+                count += lookup.get(prefixSums[i+1]-S);
+            }
+            lookup.put(prefixSums[i+1], lookup.getOrDefault(prefixSums[i+1], 0)+1);
+        }
+        return count;
+    }
+
+    public int numSubarraysWithSum0(int[] A, int S) {
         if(A==null||A.length==0) {
             return 0;
         }
