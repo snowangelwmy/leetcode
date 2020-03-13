@@ -37,9 +37,9 @@ class Q74 {
             if(matrix[midRow][midCol]==target) {
                 return true;
             } else if(matrix[midRow][midCol]<target) {
-                low++;
+                low=mid+1;
             } else {//matrix[midRow][midCol]>target
-                high--;
+                high=mid-1;
             }
         }
         return false;
