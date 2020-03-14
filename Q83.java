@@ -23,6 +23,24 @@ class Q83 {
     }
 
     public ListNode deleteDuplicates(ListNode head) {
+        if(head==null) {
+            return null;
+        }
+
+        ListNode pointer = head.next;
+        ListNode previous = head;
+        while(pointer!=null) {
+            if(pointer.val==previous.val) {
+                previous.next = pointer.next;
+            } else {
+                previous = pointer;
+            }
+            pointer = pointer.next;
+        }
+        return head;
+    }
+
+    public ListNode deleteDuplicates1(ListNode head) {
         if(head==null){
             return head;
         }
