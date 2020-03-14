@@ -58,9 +58,7 @@ class Q102 {
           childrenNodes.offer(node.right);
         }
       }
-      if(nums.size()>0) {
-        result.add(nums);
-      }
+      result.add(nums);
       nodes = childrenNodes;
     }
 
