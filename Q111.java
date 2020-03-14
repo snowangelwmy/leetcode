@@ -37,6 +37,7 @@ class Q111 {
         if(root==null){
             return 0;
         }
+        //Couldn't remove the following 2 if statements, why?
         if(root.left==null){
             return minDepth(root.right)+1;
         }
