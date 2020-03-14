@@ -34,6 +34,7 @@ class Q81 {
                     high = mid-1;
                 }
             } else {//nums[mid]==nums[low]==nums[high]
+                low++;
                 high--;
             }
         }
