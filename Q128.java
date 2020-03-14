@@ -9,9 +9,44 @@
  */
 
 import java.util.Arrays;
+import java.util.Set;
+import java.util.HashSet;
 
 class Q128 {
+    //https://leetcode.com/problems/longest-consecutive-sequence/solution/
+    //Time complexity : O(nlogn).
     public int longestConsecutive(int[] nums) {
+        if(nums==null||nums.length==0) {
+            return 0;
+        }
+
+        Set<Integer> lookup = new HashSet<>();
+        for(int num : nums) {
+            lookup.add(num);
+        }
+
+        int longestLength = 1;
+        int currentLength = 1;
+        for(int num: nums) {
+            int curNum = num;
+            if(!lookup.contains(curNum-1)) {
+                currentLength = 1;
+                curNum += 1;
+
+                while(lookup.contains(curNum)) {
+                    currentLength++;
+                    curNum++;
+                }
+
+                longestLength = Math.max(longestLength, currentLength);
+            }
+        }
+
+        return longestLength;
+    }
+
+    //Time complexity : O(n).
+    public int longestConsecutive0(int[] nums) {
         if(nums==null||nums.length==0) {
             return 0;
         }
