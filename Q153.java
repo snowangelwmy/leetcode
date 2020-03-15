@@ -21,8 +21,6 @@ class Q153 {
 
         while(start<end) {
             int mid = (start+end)/2;
-            System.out.println("start:"+start+"end:"+end);
-            System.out.println("mid:"+mid);
             if(nums[mid]>nums[start]) {
                 if(nums[start]>nums[end]) {
                     start = mid + 1;
