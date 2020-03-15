@@ -26,11 +26,21 @@
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Stack;
 
 class Q144 {
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
+
     //Iteratively solution
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> values = new ArrayList<>();
+        //We have to use Stack instead of Queue here. Why?
         Stack<TreeNode> queue = new Stack<>();
         if(root==null) {
             return values;
