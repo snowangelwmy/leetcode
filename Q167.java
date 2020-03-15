@@ -6,7 +6,27 @@
  */
 
 class Q167 {
+
     public int[] twoSum(int[] numbers, int target) {
+        if(numbers==null||numbers.length<2) {
+            return null;
+        }
+
+        int low = 0;
+        int high = numbers.length-1;
+        while(low<high) {
+            if(numbers[low]+numbers[high]==target) {
+                return new int[] {low+1, high+1};
+            } else if(numbers[low]+numbers[high]<target) {
+                low++;
+            } else {//numbers[low]+numbers[high]>target
+                high--;
+            }
+        }
+        return null;
+    }
+
+    public int[] twoSum0(int[] numbers, int target) {
         int[] result = new int[] {-1, -1};
         if(numbers==null||numbers.length<2){
             return result;
