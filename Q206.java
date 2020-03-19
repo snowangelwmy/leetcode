@@ -10,6 +10,9 @@
  *     ListNode(int x) { val = x; }
  * }
  */
+
+import java.util.Stack;
+
 class Q206 {
 
   public class ListNode {
@@ -36,6 +39,35 @@ class Q206 {
 
   //reverse iteratively
   public ListNode reverseList1(ListNode head) {
+    if(head==null||head.next==null) {
+      return head;
+    }
+
+    Stack<ListNode> stack = new Stack<>();
+    ListNode pointer = head;
+    while(pointer!=null) {
+      stack.push(pointer);
+      pointer = pointer.next;
+    }
+
+    ListNode reversedHead = null;
+    ListNode reversedPointer = null;
+    while(!stack.isEmpty()) {
+      ListNode next = stack.pop();
+      next.next = null;
+      if(reversedHead==null) {
+        reversedHead = next;
+        reversedPointer = next;
+      } else {
+        reversedPointer.next = next;
+        reversedPointer = reversedPointer.next;
+      }
+    }
+
+    return reversedHead;
+  }
+
+  public ListNode reverseList0(ListNode head) {
     ListNode pointer = head;
     ListNode reversed = null;
     while(pointer!=null){
