@@ -14,7 +14,24 @@ import java.util.List;
 import java.util.ArrayList;
 
 class Q219 {
+
   public boolean containsNearbyDuplicate(int[] nums, int k) {
+    if(nums==null||nums.length==0){
+      return false;
+    }
+    Map<Integer, Integer> lookup = new HashMap<>();
+    for(int i=0; i<nums.length; i++){
+      Integer num = Integer.valueOf(nums[i]);
+      if(lookup.containsKey(num) && i-lookup.get(num)<=k){
+        return true;
+      }
+      lookup.put(num, i);
+    }
+
+    return false;
+  }
+
+  public boolean containsNearbyDuplicate0(int[] nums, int k) {
     if(nums==null||nums.length==0){
       return false;
     }
