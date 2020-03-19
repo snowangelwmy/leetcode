@@ -8,7 +8,12 @@
  * Output: false
  * 4: Input: nums = [-1,2147483647], k = 1, t = 2147483647
  * Output: false
+ * 5: Input: nums = [0,2147483647], k = 1, t = 2147483647
+ * Output: true
  */
+
+import java.util.Map;
+import java.util.HashMap;
 
 class Q220 {
 
@@ -27,6 +32,31 @@ class Q220 {
                     return true;
                 }
             }
+        }
+
+        return false;
+    }
+
+    // Time Limit Exceeded
+    public boolean containsNearbyAlmostDuplicate1(int[] nums, int k, int t) {
+        if(nums==null||nums.length<2) {
+            return false;
+        }
+
+        Map<Long, Integer> lookup = new HashMap<>();
+        for(int i=0; i<nums.length; i++) {
+            Long numI = Long.valueOf(nums[i]);
+            int j = 0;
+            while(j<=t) {
+                if(lookup.containsKey(numI-j) && i-lookup.get(numI-j)<=k) {
+                    return true;
+                }
+                if(lookup.containsKey(numI+j) && i-lookup.get(numI+j)<=k) {
+                    return true;
+                }
+                j++;
+            }
+            lookup.put(numI, i);
         }
 
         return false;
