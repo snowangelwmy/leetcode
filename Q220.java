@@ -11,7 +11,28 @@
  */
 
 class Q220 {
+
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+        if(nums==null||nums.length<2) {
+            return false;
+        }
+
+        for(int i=0; i<nums.length-1; i++) {
+            for(int j=i+1; j<nums.length && j<=i+k; j++) {
+                long numI = nums[i];
+                long numJ = nums[j];
+                long I = i;
+                long J = j;
+                if(Math.abs(numI-numJ)<=t && Math.abs(I-J)<=k) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public boolean containsNearbyAlmostDuplicate0(int[] nums, int k, int t) {
         if(nums==null||nums.length<2) {
             return false;
         }
