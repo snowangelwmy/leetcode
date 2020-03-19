@@ -8,11 +8,30 @@
  * Output: true
  */
 
+import java.util.Set;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
 
 class Q217 {
+
   public boolean containsDuplicate(int[] nums) {
+    if(nums==null||nums.length==0) {
+      return false;
+    }
+
+    Set<Integer> seen = new HashSet<>();
+    for(int num : nums) {
+      if(seen.contains(num)) {
+        return true;
+      }
+      seen.add(num);
+    }
+
+    return false;
+  }
+
+  public boolean containsDuplicate0(int[] nums) {
     if(nums==null||nums.length==0){
       return false;
     }
