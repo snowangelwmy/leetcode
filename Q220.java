@@ -10,14 +10,47 @@
  * Output: false
  * 5: Input: nums = [0,2147483647], k = 1, t = 2147483647
  * Output: true
+ * 6: Input: nums = [1,2], k = 0, t = 1
+ * Output: false
  */
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.TreeSet;
 
 class Q220 {
 
+    //Slide window
+    //https://leetcode.com/problems/contains-duplicate-iii/discuss/508393/JAVA-EASY-Solution-with-EXPLANATION
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+        if(nums==null||nums.length<2) {
+            return false;
+        }
+
+        TreeSet<Long> window = new TreeSet<>();
+        int left = 0;
+        for(int right=0; right<nums.length; right++) {
+            Long min = window.ceiling(Long.valueOf(nums[right])-t);
+            if(min!=null && min<=nums[right]) {
+                return true;
+            }
+
+            Long max = window.floor(Long.valueOf(nums[right])+t);
+            if(max!=null && max>=nums[right]) {
+                return true;
+            }
+
+            window.add(Long.valueOf(nums[right]));
+
+            if(right-left>=k) {
+                window.remove(Long.valueOf(nums[left++]));
+            }
+        }
+
+        return false;
+    }
+
+    public boolean containsNearbyAlmostDuplicate3(int[] nums, int k, int t) {
         if(nums==null||nums.length<2) {
             return false;
         }
@@ -31,6 +64,33 @@ class Q220 {
                 if(Math.abs(numI-numJ)<=t && Math.abs(I-J)<=k) {
                     return true;
                 }
+            }
+        }
+
+        return false;
+    }
+
+    //Slide window, Time Limit Exceeded
+    public boolean containsNearbyAlmostDuplicate2(int[] nums, int k, int t) {
+        if(nums==null||nums.length<2) {
+            return false;
+        }
+
+        int left = 0;
+        for(int right=1; right<nums.length; right++) {
+            while(right-left>k) {
+                left++;
+            }
+
+            //right-left<=k
+            int index = left;
+            while(index<right) {//distinct indexes
+                Long numRight = Long.valueOf(nums[right]);
+                Long numIndex = Long.valueOf(nums[index]);
+                if(Math.abs(numRight-numIndex)<=t) {
+                    return true;
+                }
+                index++;
             }
         }
 
