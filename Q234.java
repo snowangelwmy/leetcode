@@ -23,6 +23,7 @@ class Q234 {
   }
 
   //O(n) time and O(1) space
+  //https://leetcode.com/problems/palindrome-linked-list/discuss/528966/JAVA-2-pointer-technique-+-reverse-second-half-Runtime:-O(N)-Space:-O(1)-95.77-faster
   public boolean isPalindrome(ListNode head) {
     if(head==null) {
       return true;
