@@ -88,6 +88,8 @@ class Q417 {
                 if(newCoord.rowIdx>=0&&newCoord.rowIdx<row
                         &&newCoord.colIdx>=0&&newCoord.colIdx<col
                         &&!cells.contains(newCoord)
+                        //why >= instead of <?
+                        //https://leetcode.com/problems/pacific-atlantic-water-flow/discuss/444232/Java-with-explanation-BFS-faster-than-98-memory-less-than-100
                         &&matrix[newCoord.rowIdx][newCoord.colIdx]>=matrix[coord.rowIdx][coord.colIdx]) {
                     coords.add(newCoord);
                     cells.add(newCoord);
