@@ -23,10 +23,18 @@ import java.util.LinkedList;
 import java.util.Arrays;
 
 public class Codec {
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
+
     private static final String delimiter = ",";
     private static final String nn = "null";
 
-    // Encodes a tree to a single string.
+    // Encodes a tree to a single string, e.g., [1,2,null,null,3,4,null,null,5,null,null,]
     public String serialize(TreeNode root) {
         StringBuilder builder = new StringBuilder();
         buildString(root, builder);
@@ -46,6 +54,7 @@ public class Codec {
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
         Queue<String> values = new LinkedList<>();
+        //For split() method, trailing empty strings are not included in the resulting array.
         values.addAll(Arrays.asList(data.split(delimiter)));
         return buildTree(values);
     }
