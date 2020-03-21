@@ -22,7 +22,48 @@ class Q234 {
        ListNode(int x) { val = x; }
   }
 
+  //O(n) time and O(1) space
   public boolean isPalindrome(ListNode head) {
+    if(head==null) {
+      return true;
+    }
+
+    if(head!=null&&head.next==null) {
+      return true;
+    }
+
+    ListNode fast = head;
+    ListNode slow = head;
+    while(fast!=null&&fast.next!=null) {
+      fast = fast.next.next;
+      slow = slow.next;
+    }
+
+    ListNode reverse = reverseList(slow);
+    slow = head;
+    while(slow!=null && reverse!=null) {
+      if(slow.val!=reverse.val) {
+        return false;
+      }
+      slow = slow.next;
+      reverse = reverse.next;
+    }
+    return true;
+  }
+
+  private ListNode reverseList(ListNode head) {
+    ListNode pre = null;
+    ListNode cur = head;
+    while(cur!=null) {
+      ListNode temp = cur.next;
+      cur.next = pre;
+      pre = cur;
+      cur = temp;
+    }
+    return pre;
+  }
+
+  public boolean isPalindrome0(ListNode head) {
     int length = 0;
     ListNode pointer = head;
     while(pointer!=null){
