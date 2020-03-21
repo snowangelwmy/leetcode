@@ -26,4 +26,25 @@ class Q283 {
       nums[nums.length-1-i] = 0;
     }
   }
+
+  public void moveZeroes1(int[] nums) {
+    if(nums==null||nums.length==0) {
+      return;
+    }
+
+    int nextPos = 0;
+    int nextIdx = 0;
+    while(nextPos<nums.length) {
+      while(nextIdx<nums.length&&nums[nextIdx]==0) {
+        nextIdx++;
+        continue;
+      }
+
+      if(nextIdx<nums.length) {
+        nums[nextPos++] = nums[nextIdx++];
+      } else {
+        nums[nextPos++] = 0;
+      }
+    }
+  }
 }
