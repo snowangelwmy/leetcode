@@ -10,11 +10,11 @@
 
 class Q274 {
     public int hIndex(int[] citations) {
-        int numOfPapers = citations.length;
-        if(citations==null||numOfPapers==0) {
+        if(citations==null||citations.length==0) {
             return 0;
         }
 
+        int numOfPapers = citations.length;
         int[] nums = new int[numOfPapers+1];
         for(int i=0; i<numOfPapers; i++) {
             if(citations[i]>numOfPapers) {
