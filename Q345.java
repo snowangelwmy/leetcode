@@ -6,6 +6,8 @@
  * Output: "leotcede"
  * 3: Input: "aA"
  * Output: "Aa"
+ * 4: Input: "Marge, let's \"went.\" I await news telegram."
+ * Output: "Marge, let's \"went.\" i awaIt news telegram."
  */
 
 import java.util.Stack;
@@ -27,7 +29,43 @@ class Q345 {
     add('U');
   }};
 
+  //Two pointer solution
   public String reverseVowels(String s) {
+    if(s==null||s.length()<2) {
+      return s;
+    }
+
+    char[] array = s.toCharArray();
+    int left = 0;
+    int right = array.length-1;
+    while(left<right) {
+      char c = array[left];
+      if(VOWEL_SET.contains(c)) {
+        while(right>left) {
+          if(!VOWEL_SET.contains(array[right])) {
+            right--;
+            continue;
+          }
+
+          swap(array, left, right);
+          right--;
+          break;
+        }
+      }
+      left++;
+    }
+
+    return String.valueOf(array);
+  }
+
+  private void swap(char[] array, int i, int j) {
+    char temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+
+  public String reverseVowels0(String s) {
     if(s==null||s.length()==0){
       return s;
     }
