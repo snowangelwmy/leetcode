@@ -9,7 +9,24 @@
 import java.lang.StringBuilder;
 
 class Q344 {
-  public String reverseString(String s) {
+
+  public void reverseString(char[] s) {
+    if(s==null||s.length<2) {
+      return;
+    }
+
+    for(int i=0; i<s.length/2; i++) {
+      swap(s, i, s.length-1-i);
+    }
+  }
+
+  private void swap(char[] s, int i, int j) {
+    char c = s[i];
+    s[i] = s[j];
+    s[j] = c;
+  }
+
+  public String reverseString0(String s) {
     if(s==null||s.length()==0){
       return s;
     }
