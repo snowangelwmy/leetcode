@@ -16,7 +16,7 @@ import java.util.HashSet;
 import java.lang.StringBuilder;
 
 class Q345 {
-  private static final Set<Character> VOWEL_SET = new HashSet<Character>() {{
+  private static final Set<Character> VOWEL_SET = new HashSet<>() {{
     add('a');
     add('e');
     add('i');
