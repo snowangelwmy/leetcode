@@ -6,6 +6,7 @@
 
 public class Q375 {
 
+  //https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/491523/Java-with-2D-DP-intuitive-with-explanation
   public int getMoneyAmount(int n) {
     int[][] lookup = new int[n+1][n+1];
     return dp(lookup, 1, n);
