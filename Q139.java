@@ -32,4 +32,38 @@ class Q139 {
 
         return lookup[s.length()];
     }
+
+    //backtrack
+    public boolean wordBreak1(String s, List<String> wordDict) {
+        if(s==null||s.length()==0||wordDict==null||wordDict.size()==0) {
+            return false;
+        }
+
+        int[] lookup = new int[s.length()+1];
+        return wordBreakHelper(s, 0, wordDict, lookup);
+    }
+
+    private boolean wordBreakHelper(String s, int index, List<String> wordDict, int[] lookup) {
+        if(lookup[index]!=0) {
+            return lookup[index]==1? true: false;
+        }
+
+        if(index==s.length()) {
+            lookup[index] = 1;
+            return true;
+        }
+
+        String substring = s.substring(index);
+        for(String word : wordDict) {
+            if(substring.startsWith(word)) {
+                if(wordBreakHelper(s, index+word.length(), wordDict, lookup)) {
+                    lookup[index] = 1;
+                    return true;
+                }
+            }
+        }
+
+        lookup[index] = -1;
+        return false;
+    }
 }
