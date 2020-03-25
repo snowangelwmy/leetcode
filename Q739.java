@@ -1,3 +1,9 @@
+/**
+ * Test cases:
+ * 1: Input: T = [73, 74, 75, 71, 69, 72, 76, 73]
+ * Output: [1, 1, 4, 2, 1, 1, 0, 0]
+ */
+
 import java.util.Stack;
 
 class Q739 {
