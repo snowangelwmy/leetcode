@@ -39,6 +39,7 @@ class Q373 {
             return results;
         }
 
+        //Cannot use TreeSet here, why?
         TreeMap<Integer, List<Item>> itemsMap = new TreeMap<>();
         int count = 0;
         for(int i=0; i<nums1.length; i++) {
