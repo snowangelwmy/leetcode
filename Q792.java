@@ -25,6 +25,7 @@ class Q792 {
         }
     }
 
+    //https://leetcode.com/problems/number-of-matching-subsequences/discuss/470530/Java-Solution-using-Trie
     public int numMatchingSubseq(String S, String[] words) {
         if(S==null||S.length()==0) {
             return 0;
