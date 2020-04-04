@@ -9,7 +9,6 @@
  * XRLXRXRXL ->
  * XRLXXRRXL ->
  * XRLXXRRLX
- *
  * 2: Input: start = "XXXXXLXXXX", end = "LXXXXXXXXX"
  * Output: True
  */
