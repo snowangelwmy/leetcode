@@ -20,6 +20,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 class Q659 {
+    //https://leetcode.com/problems/split-array-into-consecutive-subsequences/solution/
     public boolean isPossible(int[] nums) {
         if(nums==null||nums.length<3) {
             return false;
