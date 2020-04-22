@@ -1,3 +1,27 @@
+/**
+ * Test cases:
+ * 1: Examples:
+ * Input: N = 1, K = 1
+ * Output: 0
+ *
+ * Input: N = 2, K = 1
+ * Output: 0
+ *
+ * Input: N = 2, K = 2
+ * Output: 1
+ *
+ * Input: N = 4, K = 5
+ * Output: 1
+ *
+ * Explanation:
+ * row 1: 0
+ * row 2: 01
+ * row 3: 0110
+ * row 4: 01101001
+ * 2: Input: N = 30, K = 434991989
+ * Output: 0
+ */
+
 import java.lang.StringBuilder;
 import java.lang.Math;
 
