@@ -15,6 +15,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 class Q354 {
+    //https://www.cnblogs.com/grandyang/p/5568818.html
     public int maxEnvelopes(int[][] envelopes) {
         if(envelopes==null||envelopes.length==0) {
             return 0;
