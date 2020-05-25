@@ -7,9 +7,32 @@
  * Output: 3
  */
 
+import java.util.TreeMap;
+
 class Q327 {
-    //O(n^2) solution
+    //O(n) solution
     public int countRangeSum(int[] nums, int lower, int upper) {
+        if(nums==null||nums.length==0) {
+            return 0;
+        }
+
+        TreeMap<Long, Integer> lookup = new TreeMap<>();
+        lookup.put(0L, 1);
+
+        int totalCount = 0;
+        long prefixSum = 0L;
+        for(int i=0; i<nums.length; i++) {
+            prefixSum += nums[i];
+            for(int count : lookup.subMap(prefixSum-upper, true, prefixSum-lower, true).values()) {
+                totalCount += count;
+            }
+            lookup.put(prefixSum, lookup.getOrDefault(prefixSum, 0)+1);
+        }
+        return totalCount;
+    }
+
+    //O(n^2) solution
+    public int countRangeSum0(int[] nums, int lower, int upper) {
         if(nums==null||nums.length==0) {
             return 0;
         }
